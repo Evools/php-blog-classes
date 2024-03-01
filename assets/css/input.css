@@ -26,4 +26,4 @@
     background-color: #f1f1f1;
 }
 
-/*npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/style.css --watch*/
+/*npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch*/
