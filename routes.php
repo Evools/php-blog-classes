@@ -14,7 +14,10 @@ get('/add-post', 'views/posts/add-post.php');
 post('/add-post', 'views/posts/add-post.php');
 
 get('/views-post/$id', 'views/posts/views.php');
-post('/delete-post/$id', 'views/posts/views.php');
+post('/views-post/$id', 'views/posts/views.php');
+
+get('/edit-post/$id', 'views/posts/edit-post.php');
+post('/edit-post/$id', 'views/posts/edit-post.php');
 
 post('/logout', function (){
     session_destroy();

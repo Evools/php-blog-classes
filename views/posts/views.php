@@ -14,7 +14,6 @@ $conn = $db->getConnect();
 $posts = new PostsController($conn);
 $get_post = $posts->getPost($id);
 
-
 if (isset($_POST['delete'])) {
     $posts->deletePost($id);
     header('Location: /');
@@ -28,7 +27,7 @@ if (isset($_POST['delete'])) {
         <div class="px-6 pt-4 pb-2 flex items-center justify-between w-full">
             <h1 class="text-xl font-medium">Заголовок поста:<?= $get_post['title']; ?></h1>
             <div class="flex items-center gap-4">
-                <a href="/edit/<?= $get_post['id'] ?>" class="bg-orange-500 text-white p-2 px-10 rounded-md hover:bg-orange-600 focus:outline-none focus:bg-orange-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 transition-colors duration-300">Изменить</a>
+                <a href="/edit-post/<?= $get_post['id'] ?>" class="bg-orange-500 text-white p-2 px-10 rounded-md hover:bg-orange-600 focus:outline-none focus:bg-orange-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 transition-colors duration-300">Изменить</a>
                 <form action="" method="post">
                     <button type="submit" name="delete" class="bg-red-500 text-white p-2 px-10 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-700 focus:ring-2 focus:ring-offset-2 focus:ring-red-900 transition-colors duration-300">Удалить</button>
                 </form>
@@ -44,5 +43,11 @@ if (isset($_POST['delete'])) {
             </div>
         </div>
     </div>
+
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>-->
+<!--    <script>-->
+<!--        hljs.highlightAll();-->
+<!--    </script>-->
 
 <?php include "layout/footer.php"; ?>

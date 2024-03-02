@@ -47,6 +47,17 @@ class PostsController
         return $stmt->fetch();
     }
 
+    public function editPost($id, $title, $description, $image)
+    {
+        $sql = "UPDATE `posts` SET title = :title, description = :description, image = :image WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':image', $image);
+        $stmt->execute();
+    }
+
     public function deletePost($id)
     {
         $sql = "DELETE FROM `posts` WHERE id = :id";
