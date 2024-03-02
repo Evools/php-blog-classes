@@ -14,7 +14,7 @@ $succes_message = "";
 $err_message = "";
 
 
-if(isset($_POST['email'])){
+if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 

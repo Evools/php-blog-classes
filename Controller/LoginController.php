@@ -27,7 +27,7 @@ class LoginController
                 $_SESSION['username'] = $user['username'];
                 return array("success" => true);
             } else {
-                $err_message = "Неверный пароль";
+                $err_message = "Неверный логин или пароль";
                 return array("success" => false, "message" => $err_message);
             }
         } else {
